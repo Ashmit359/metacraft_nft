@@ -1,0 +1,42 @@
+// Create an array to hold your NFTs
+let nftCollection = [];
+
+// NFT class constructor
+class NFT {
+  constructor(name, eyeColor, shirtType, bling) {
+    this.name = name;
+    this.eyeColor = eyeColor;
+    this.shirtType = shirtType;
+    this.bling = bling;
+  }
+}
+
+// Function to mint a new NFT and add it to the collection
+function mintNFT(name, eyeColor, shirtType, bling) {
+  const newNFT = new NFT(name, eyeColor, shirtType, bling);
+  nftCollection.push(newNFT);
+}
+
+// Function to list all the NFTs and their metadata
+function listNFTs() {
+  for (let i = 0; i < nftCollection.length; i++) {
+    const nft = nftCollection[i];
+    console.log("Name: " + nft.name);
+    console.log("Eye Color: " + nft.eyeColor);
+    console.log("Shirt Type: " + nft.shirtType);
+    console.log("Bling: " + nft.bling);
+    console.log("--------------------");
+  }
+}
+
+// Function to get the total number of minted NFTs
+function getTotalSupply() {
+  console.log("Total NFTs minted: " + nftCollection.length);
+}
+
+// Mint some NFTs and perform operations
+mintNFT("Awesome Digital Art", "yellow", "hoodie", "platinum necklace");
+mintNFT("Experimental NFT", "orange", "jacket", "ruby ring");
+
+listNFTs();
+getTotalSupply();
